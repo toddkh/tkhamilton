@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tkhamilton
+  labels:
+    app: tkhamilton
+    build-sha1: "_GIT_SHA_"
+    build-number: "_BUILD_NUMBER_"
+    image-tag: "_IMAGE_TAG_"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: tkhamilton
+  selector:
+    app: tkhamilton

@@ -1,0 +1,164 @@
+<!-- // Amazon apstag init -->
+<script>
+!function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+
+apstag.init({
+  pubID: '3467',
+  adServer: 'googletag',
+  bidTimeout: 800
+});
+</script>
+
+<!-- Sonobi JS -->
+<script async="async" src="//mtrx.go.sonobi.com/morpheus.distractify.8131.js"></script>
+
+<!-- GPT.js and Googletag -->
+<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+</script>
+
+<!-- Ad config -->
+<script>
+window.paradigmAdConfig = {
+  ads: {
+    'div-gpt-ad-1491576847193': {
+      adUnitPath: '/18834096/GM_Desktop_Homepage_970x250_Flex',
+      slotSizes: [[728, 90], [970, 250]],
+      targeting: { 'ix-adslot': 'top' },
+      minWidth: 1190
+    },
+    'div-gpt-ad-1491577110077': {
+      adUnitPath: '/18834096/GM_Mobile_Homepage_Top',
+      slotSizes: [[320, 50], [300, 50], [300, 250]],
+      targeting: { 'ix-adslot': 'top' },
+      maxWidth: 1189
+    },
+    'div-gpt-ad-1489503647033': {
+      adUnitPath: '/18834096/GM_Desktop_InArticle_1',
+      slotSizes: [[728, 90]],
+      targeting: { 'ix-adslot': 'content' },
+      minWidth: 1190
+    },
+    'div-gpt-ad-1489503736452': {
+      adUnitPath: '/18834096/GM_Desktop_InArticle_2',
+      slotSizes: [[728, 90]],
+      targeting: { 'ix-adslot': 'content' },
+      minWidth: 1190
+    },
+    'div-gpt-ad-1489503783140': {
+      adUnitPath: '/18834096/GM_Desktop_InArticle_3',
+      slotSizes: [[728, 90]],
+      targeting: { 'ix-adslot': 'content' },
+      minWidth: 1190
+    },
+    'div-gpt-ad-1489503817214': {
+      adUnitPath: '/18834096/GM_Desktop_InArticle_4',
+      slotSizes: [[728, 90]],
+      targeting: { 'ix-adslot': 'content' },
+      minWidth: 1190
+    },
+    'div-gpt-ad-1489503854568': {
+      adUnitPath: '/18834096/GM_Desktop_InArticle_TopPage',
+      slotSizes: [[970, 250], [728, 90]],
+      targeting: { 'ix-adslot': 'content' },
+      minWidth: 1190
+    },
+    'div-gpt-ad-1489503884619': {
+      adUnitPath: '/18834096/GM_Desktop_RightRail',
+      slotSizes: [[300, 600], [300, 250]],
+      targeting: { 'ix-adslot': 'content' },
+      minWidth: 1190,
+      refresh: true
+    },
+    'div-gpt-ad-1489503935048': {
+      adUnitPath: '/18834096/GM_Mobile_Adhesion',
+      slotSizes: [[300, 50], [320, 50]],
+      targeting: { 'ix-adslot': 'content' },
+      maxWidth: 1189,
+      refresh: true
+    },
+    'div-gpt-ad-1489504008612': {
+      adUnitPath: '/18834096/GM_Mobile_InArticle_1',
+      slotSizes: [[300, 50], [300, 250], [320, 50]],
+      targeting: { 'ix-adslot': 'content' },
+      maxWidth: 1189
+    },
+    'div-gpt-ad-1489504037170': {
+      adUnitPath: '/18834096/GM_Mobile_InArticle_2',
+      slotSizes: [[300, 250], [300, 50], [320, 50]],
+      targeting: { 'ix-adslot': 'content' },
+      maxWidth: 1189
+    },
+    'div-gpt-ad-1489504065406': {
+      adUnitPath: '/18834096/GM_Mobile_InArticle_3',
+      slotSizes: [[300, 250], [300, 50], [320, 50]],
+      targeting: { 'ix-adslot': 'content' },
+      maxWidth: 1189
+    },
+    'div-gpt-ad-1489504095818': {
+      adUnitPath: '/18834096/GM_Mobile_InArticle_4',
+      slotSizes: [[320, 50], [300, 50], [300, 250]],
+      targeting: { 'ix-adslot': 'content' },
+      maxWidth: 1189
+    }
+  },
+
+  bidders: {
+    timeLimit: 1800,
+    keys: [
+      'apstag',
+      'headertag',
+      'headertagconfig',
+      'HeaderBidder'
+    ],
+    handlers: [
+      // amazon
+      function(slots, gptSlots, clear) {
+        apstag.fetchBids({ slots: slots, timeout: 1800 }, function(bids) {
+          clear(function() {
+            apstag.setDisplayBids(gptSlots);
+          });
+        });
+      }
+    ]
+  },
+
+  refreshTime: 30000
+};
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NFFJXP');</script>
+<!-- End Google Tag Manager -->
+
+<!--Google Audience -->
+<script type='text/javascript'>
+var axel = Math.random() + '';
+var a = axel * 10000000000000;
+document.write('<img src="https://pubads.g.doubleclick.net/activity;dc_iu=/18834096/;ord=' + a + '?" width=1 height=1 border=0/>');
+</script>
+<noscript>
+<img src="https://pubads.g.doubleclick.net/activity;dc_iu=/18834096/;ord=1?" width=1 height=1 border=0/>
+</noscript>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1787976864857742');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1787976864857742&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->

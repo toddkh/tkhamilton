@@ -1,0 +1,476 @@
+@value linkColor from './colors.css';
+@value slideSelectColor: #777777;
+
+.Slides {
+  position: relative;
+  height: 650px;
+  padding-top: 630px;
+  background: inherit;
+  color: inherit;
+  text-align: center;
+  overflow: hidden;
+}
+.SlidesNoHeading {
+  composes: Slides;
+  height: 430px;
+  padding-top: 410px;
+}
+.SlideSelect {
+  position: relative;
+  z-index: 3;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  text-align: center;
+  cursor: pointer;
+}
+.SlideSelect:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  background: inherit;
+}
+.SlideSelect:after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  border-radius: 50%;
+  background: slideSelectColor;
+}
+.SlideSelect:checked:after {
+  background: linkColor;
+}
+.SlideSelect0,
+.SlideSelect1,
+.SlideSelect2,
+.SlideSelect3,
+.SlideSelect4,
+.SlideSelect5,
+.SlideSelect6,
+.SlideSelect7,
+.SlideSelect8,
+.SlideSelect9,
+.SlideSelect10,
+.SlideSelect11,
+.SlideSelect12,
+.SlideSelect13,
+.SlideSelect14,
+.SlideSelect15,
+.SlideSelect16,
+.SlideSelect17,
+.SlideSelect18,
+.SlideSelect19,
+.SlideSelect20,
+.SlideSelect21,
+.SlideSelect22,
+.SlideSelect23,
+.SlideSelect24,
+.SlideSelect25,
+.SlideSelect26,
+.SlideSelect27,
+.SlideSelect28,
+.SlideSelect29,
+.SlideSelect30,
+.SlideSelect31,
+.SlideSelect32,
+.SlideSelect33,
+.SlideSelect34,
+.SlideSelect35,
+.SlideSelect36,
+.SlideSelect37,
+.SlideSelect38,
+.SlideSelect39,
+.SlideSelect40,
+.SlideSelect41,
+.SlideSelect42,
+.SlideSelect43,
+.SlideSelect44,
+.SlideSelect45,
+.SlideSelect46,
+.SlideSelect47,
+.SlideSelect48,
+.SlideSelect49 {
+  composes: SlideSelect;
+}
+
+.SlidesContainer {
+  composes: Container from './common.css';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+
+.Slide {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+.SlideElement {
+  width: 100%;
+  opacity: 0;
+}
+.SlideHeading {
+  composes: SlideElement;
+  position: absolute;
+  width: auto;
+  top: 450px;
+  left: 30px;
+  right: 30px;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 26px;
+  color: inherit;
+  background-color: inherit;
+  transition: transform 0.25s ease-in-out;
+  transform: translate3d(400px, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.SlideSubHeading {
+  composes: SlideElement;
+  composes: SubHeading from './common.css';
+  position: absolute;
+  z-index: 3;
+  width: auto;
+  top: 425px;
+  left: 30px;
+  font-size: 14px;
+  background-color: inherit;
+  transition: transform 0.25s ease-in-out;
+  transform: translate3d(400px, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.SlideContents {
+  composes: SlideElement;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  transition: transform 0.25s ease-in-out;
+  transform: translate3d(400px, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.SlideContents:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.SlideImage {
+  composes: SlideElement;
+  height: 400px;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.25s ease-in-out;
+  transform: translate3d(400px, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.SlideButton {
+  composes: SlideElement;
+  position: absolute;
+  z-index: 2;
+  top: 160px;
+  width: 30px;
+  height: 30px;
+  font-size: 40px;
+  font-weight: 700;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.SlideButton:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.SlidePrevious {
+  composes: SlideButton;
+  left: 0;
+  text-align: left;
+}
+.SlideNext {
+  composes: SlideButton;
+  right: 0;
+  text-align: right;
+}
+.SlidePrevious:after {
+  content: '\2039';
+  position: absolute;
+  top: 0;
+  left: 12px;
+  line-height: 31px;
+}
+.SlideNext:after {
+  content: '\203a';
+  position: absolute;
+  top: 0;
+  right: 12px;
+  line-height: 31px;
+}
+
+.SlideLink {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: inherit;
+}
+.SlideLink:hover {
+  color: inherit;
+}
+
+.Slide0,
+.Slide1,
+.Slide2,
+.Slide3,
+.Slide4,
+.Slide5,
+.Slide6,
+.Slide7,
+.Slide8,
+.Slide9,
+.Slide10,
+.Slide11,
+.Slide12,
+.Slide13,
+.Slide14,
+.Slide15,
+.Slide16,
+.Slide17,
+.Slide18,
+.Slide19,
+.Slide20,
+.Slide21,
+.Slide22,
+.Slide23,
+.Slide24,
+.Slide25,
+.Slide26,
+.Slide27,
+.Slide28,
+.Slide29,
+.Slide30,
+.Slide31,
+.Slide32,
+.Slide33,
+.Slide34,
+.Slide35,
+.Slide36,
+.Slide37,
+.Slide38,
+.Slide39,
+.Slide40,
+.Slide41,
+.Slide42,
+.Slide43,
+.Slide44,
+.Slide45,
+.Slide46,
+.Slide47,
+.Slide48,
+.Slide49 {
+  composes: Slide;
+}
+.SlideSelect0:checked ~ .SlidesContainer .Slide0,
+.SlideSelect1:checked ~ .SlidesContainer .Slide1,
+.SlideSelect2:checked ~ .SlidesContainer .Slide2,
+.SlideSelect3:checked ~ .SlidesContainer .Slide3,
+.SlideSelect4:checked ~ .SlidesContainer .Slide4,
+.SlideSelect5:checked ~ .SlidesContainer .Slide5,
+.SlideSelect6:checked ~ .SlidesContainer .Slide6,
+.SlideSelect7:checked ~ .SlidesContainer .Slide7,
+.SlideSelect8:checked ~ .SlidesContainer .Slide8,
+.SlideSelect9:checked ~ .SlidesContainer .Slide9,
+.SlideSelect10:checked ~ .SlidesContainer .Slide10,
+.SlideSelect11:checked ~ .SlidesContainer .Slide11,
+.SlideSelect12:checked ~ .SlidesContainer .Slide12,
+.SlideSelect13:checked ~ .SlidesContainer .Slide13,
+.SlideSelect14:checked ~ .SlidesContainer .Slide14,
+.SlideSelect15:checked ~ .SlidesContainer .Slide15,
+.SlideSelect16:checked ~ .SlidesContainer .Slide16,
+.SlideSelect17:checked ~ .SlidesContainer .Slide17,
+.SlideSelect18:checked ~ .SlidesContainer .Slide18,
+.SlideSelect19:checked ~ .SlidesContainer .Slide19,
+.SlideSelect20:checked ~ .SlidesContainer .Slide20,
+.SlideSelect21:checked ~ .SlidesContainer .Slide21,
+.SlideSelect22:checked ~ .SlidesContainer .Slide22,
+.SlideSelect23:checked ~ .SlidesContainer .Slide23,
+.SlideSelect24:checked ~ .SlidesContainer .Slide24,
+.SlideSelect25:checked ~ .SlidesContainer .Slide25,
+.SlideSelect26:checked ~ .SlidesContainer .Slide26,
+.SlideSelect27:checked ~ .SlidesContainer .Slide27,
+.SlideSelect28:checked ~ .SlidesContainer .Slide28,
+.SlideSelect29:checked ~ .SlidesContainer .Slide29,
+.SlideSelect30:checked ~ .SlidesContainer .Slide30,
+.SlideSelect31:checked ~ .SlidesContainer .Slide31,
+.SlideSelect32:checked ~ .SlidesContainer .Slide32,
+.SlideSelect33:checked ~ .SlidesContainer .Slide33,
+.SlideSelect34:checked ~ .SlidesContainer .Slide34,
+.SlideSelect35:checked ~ .SlidesContainer .Slide35,
+.SlideSelect36:checked ~ .SlidesContainer .Slide36,
+.SlideSelect37:checked ~ .SlidesContainer .Slide37,
+.SlideSelect38:checked ~ .SlidesContainer .Slide38,
+.SlideSelect39:checked ~ .SlidesContainer .Slide39,
+.SlideSelect40:checked ~ .SlidesContainer .Slide40,
+.SlideSelect41:checked ~ .SlidesContainer .Slide41,
+.SlideSelect42:checked ~ .SlidesContainer .Slide42,
+.SlideSelect43:checked ~ .SlidesContainer .Slide43,
+.SlideSelect44:checked ~ .SlidesContainer .Slide44,
+.SlideSelect45:checked ~ .SlidesContainer .Slide45,
+.SlideSelect46:checked ~ .SlidesContainer .Slide46,
+.SlideSelect47:checked ~ .SlidesContainer .Slide47,
+.SlideSelect48:checked ~ .SlidesContainer .Slide48,
+.SlideSelect49:checked ~ .SlidesContainer .Slide49 {
+  z-index: 1;
+}
+.SlideSelect0:checked ~ .SlidesContainer .Slide0 .SlideElement,
+.SlideSelect1:checked ~ .SlidesContainer .Slide1 .SlideElement,
+.SlideSelect2:checked ~ .SlidesContainer .Slide2 .SlideElement,
+.SlideSelect3:checked ~ .SlidesContainer .Slide3 .SlideElement,
+.SlideSelect4:checked ~ .SlidesContainer .Slide4 .SlideElement,
+.SlideSelect5:checked ~ .SlidesContainer .Slide5 .SlideElement,
+.SlideSelect6:checked ~ .SlidesContainer .Slide6 .SlideElement,
+.SlideSelect7:checked ~ .SlidesContainer .Slide7 .SlideElement,
+.SlideSelect8:checked ~ .SlidesContainer .Slide8 .SlideElement,
+.SlideSelect9:checked ~ .SlidesContainer .Slide9 .SlideElement,
+.SlideSelect10:checked ~ .SlidesContainer .Slide10 .SlideElement,
+.SlideSelect11:checked ~ .SlidesContainer .Slide11 .SlideElement,
+.SlideSelect12:checked ~ .SlidesContainer .Slide12 .SlideElement,
+.SlideSelect13:checked ~ .SlidesContainer .Slide13 .SlideElement,
+.SlideSelect14:checked ~ .SlidesContainer .Slide14 .SlideElement,
+.SlideSelect15:checked ~ .SlidesContainer .Slide15 .SlideElement,
+.SlideSelect16:checked ~ .SlidesContainer .Slide16 .SlideElement,
+.SlideSelect17:checked ~ .SlidesContainer .Slide17 .SlideElement,
+.SlideSelect18:checked ~ .SlidesContainer .Slide18 .SlideElement,
+.SlideSelect19:checked ~ .SlidesContainer .Slide19 .SlideElement,
+.SlideSelect20:checked ~ .SlidesContainer .Slide20 .SlideElement,
+.SlideSelect21:checked ~ .SlidesContainer .Slide21 .SlideElement,
+.SlideSelect22:checked ~ .SlidesContainer .Slide22 .SlideElement,
+.SlideSelect23:checked ~ .SlidesContainer .Slide23 .SlideElement,
+.SlideSelect24:checked ~ .SlidesContainer .Slide24 .SlideElement,
+.SlideSelect25:checked ~ .SlidesContainer .Slide25 .SlideElement,
+.SlideSelect26:checked ~ .SlidesContainer .Slide26 .SlideElement,
+.SlideSelect27:checked ~ .SlidesContainer .Slide27 .SlideElement,
+.SlideSelect28:checked ~ .SlidesContainer .Slide28 .SlideElement,
+.SlideSelect29:checked ~ .SlidesContainer .Slide29 .SlideElement,
+.SlideSelect30:checked ~ .SlidesContainer .Slide30 .SlideElement,
+.SlideSelect31:checked ~ .SlidesContainer .Slide31 .SlideElement,
+.SlideSelect32:checked ~ .SlidesContainer .Slide32 .SlideElement,
+.SlideSelect33:checked ~ .SlidesContainer .Slide33 .SlideElement,
+.SlideSelect34:checked ~ .SlidesContainer .Slide34 .SlideElement,
+.SlideSelect35:checked ~ .SlidesContainer .Slide35 .SlideElement,
+.SlideSelect36:checked ~ .SlidesContainer .Slide36 .SlideElement,
+.SlideSelect37:checked ~ .SlidesContainer .Slide37 .SlideElement,
+.SlideSelect38:checked ~ .SlidesContainer .Slide38 .SlideElement,
+.SlideSelect39:checked ~ .SlidesContainer .Slide39 .SlideElement,
+.SlideSelect40:checked ~ .SlidesContainer .Slide40 .SlideElement,
+.SlideSelect41:checked ~ .SlidesContainer .Slide41 .SlideElement,
+.SlideSelect42:checked ~ .SlidesContainer .Slide42 .SlideElement,
+.SlideSelect43:checked ~ .SlidesContainer .Slide43 .SlideElement,
+.SlideSelect44:checked ~ .SlidesContainer .Slide44 .SlideElement,
+.SlideSelect45:checked ~ .SlidesContainer .Slide45 .SlideElement,
+.SlideSelect46:checked ~ .SlidesContainer .Slide46 .SlideElement,
+.SlideSelect47:checked ~ .SlidesContainer .Slide47 .SlideElement,
+.SlideSelect48:checked ~ .SlidesContainer .Slide48 .SlideElement,
+.SlideSelect49:checked ~ .SlidesContainer .Slide49 .SlideElement {
+  opacity: 1;
+  transition: transform 0.25s ease-in-out;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+@media (min-width: 360px) {
+  .SlideHeading {
+    font-size: 28px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: 480px) {
+  .SlideHeading {
+    font-size: 32px;
+    line-height: 34px;
+  }
+}
+
+@media (min-width: 580px) {
+  .SlideHeading {
+    top: 455px;
+    font-size: 40px;
+    line-height: 42px;
+  }
+}
+
+@media (min-width: 960px) {
+  .Slides {
+    height: 510px;
+    padding-top: 490px;
+    background: inherit;
+  }
+  .SlidesNoHeading {
+    composes: Slides;
+    height: 510px;
+  }
+  .SlideSelect:before {
+    background-color: transparent;
+  }
+  .SlideButton {
+    top: 240px;
+  }
+  .SlideImage {
+    height: 510px;
+  }
+  .SlideHeading {
+    top: 100px;
+    left: 30px;
+    right: auto;
+    width: 400px;
+    padding: 0 10px 10px;
+    font-size: 48px;
+    line-height: 1;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .SlideSubHeading {
+    top: 75px;
+    left: 30px;
+    right: auto;
+    width: 400px;
+    height: 30px;
+    padding: 6px 10px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (min-width: 1400px) {
+  .SlidePrevious {
+    left: -48px;
+  }
+  .SlideNext {
+    right: -48px;
+  }
+}

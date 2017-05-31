@@ -1,0 +1,293 @@
+@value globalBackgroundColor from './colors.css';
+@value grayColor from './colors.css';
+@value darkGrayColor from './colors.css';
+@value lightGrayColor from './colors.css';
+@value highlightColor from './colors.css';
+@value linkColor from './colors.css';
+@value errorColor from './colors.css';
+
+.ChannelFeed {
+  composes: Container from './common.css';
+  padding-bottom: 30px;
+}
+.ChannelFeedHeading {
+  display: block;
+  height: 30px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 30px;
+  margin-bottom: 15px;
+}
+.ChannelFeedItem {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+  color: darkGrayColor;
+}
+.ChannelFeedImageWrap {
+  display: block;
+  position: relative;
+  padding-bottom: 52.34%;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.ChannelFeedImage {
+  composes: ResponsiveImage from './common.css';
+}
+.ChannelFeedInfo {
+  text-align: center;
+}
+.ChannelFeedItemSubHeading {
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+  padding: 5px 10px;
+  top: -15px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: white;
+  background: black;
+}
+.ChannelFeedItemHeadingWrap {
+  display: block;
+}
+.ChannelFeedItemHeading {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 30px;
+  letter-spacing: -1px;
+  transition: color 0.25s ease-in-out;
+}
+.ChannelFeedItemHeading:hover {
+  color: highlightColor;
+}
+.ChannelFeedItemDetails {
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  line-height: 23px;
+  margin-bottom: 30px;
+  text-align: left;
+  display: none;
+  max-height: 69px;
+  overflow: hidden;
+}
+.ChannelFeedItemDetails p > span {
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+.ChannelFeedItemAuthorDate {
+  display: none;
+}
+
+.ChannelTryAgainButtonWrap {
+  text-align: center;
+}
+.ChannelTryAgainButton {
+  background-color: errorColor;
+}
+.ChannelTryAgainButton:hover {
+  background-color: errorColor;
+}
+
+@media (min-width: 768px) {
+  .ChannelFeedItem {
+    display: inline-block;
+    vertical-align: top;
+
+    &:nth-child(5n+1) {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &:nth-child(5n+2) {
+      width: 50%;
+      padding-left: 15px;
+      padding-right: 25px;
+    }
+    &:nth-child(5n+3) {
+      width: 50%;
+      padding-left: 25px;
+      padding-right: 15px;
+    }
+    &:nth-child(5n+4) {
+      width: 50%;
+      padding-left: 15px;
+      padding-right: 25px;
+    }
+    &:nth-child(5n+5) {
+      width: 50%;
+      padding-left: 25px;
+      padding-right: 15px;
+    }
+  }
+}
+
+@media (min-width: 1190px) {
+  .Channel {
+    padding-top: 30px;
+  }
+  .ChannelFeedItem {
+    position: relative;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+    padding: 0 600px 30px 0;
+    min-height: 328px;
+    text-align: left;
+    border-bottom: 1px solid lightGrayColor;
+  }
+  .ChannelFeedItem:nth-child(5n+1),
+  .ChannelFeedItem:nth-child(5n+2),
+  .ChannelFeedItem:nth-child(5n+3),
+  .ChannelFeedItem:nth-child(5n+4),
+  .ChannelFeedItem:nth-child(5n+5) {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 600px;
+  }
+  .ChannelFeedImageWrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 570px;
+    height: 298px;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .ChannelFeedItemSubHeading {
+    display: block;
+    top: 0;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    background: transparent;
+    text-align: left;
+    color: highlightColor;
+    transition: color 0.25s ease-in-out;
+  }
+  .ChannelFeedItemSubHeading:hover {
+    color: darkGrayColor;
+  }
+  .TrendingCategory:hover {
+    background: highlightColor;
+  }
+  .ChannelFeedItemHeading {
+    margin-top: -6px;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 45px;
+    transition: color 0.25s ease-in-out;
+  }
+  .ChannelFeedItemDetails {
+    display: block;
+  }
+  .ChannelFeedItemAuthorDate {
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 570px;
+    font-size: 13px;
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    color: grayColor;
+    text-align: left;
+  }
+  .ChannelFeedItemAuthorDate a,
+  .ChannelFeedItemAuthorDate span {
+    font-weight: 700;
+    color: darkGrayColor;
+  }
+  .ChannelFeedItemAuthor {
+    float: left;
+  }
+  .ChannelFeedItemDate {
+    float: right;
+  }
+
+  .ChannelFeedItem:nth-child(7n+5),
+  .ChannelFeedItem:nth-child(7n+6),
+  .ChannelFeedItem:nth-child(7n+7) {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 125px;
+    width: 370px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 20px;
+    margin-right: 30px;
+    text-align: center;
+
+    .ChannelFeedImageWrap {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding-bottom: 52.34%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .ChannelFeedItemSubHeading {
+      display: inline-block;
+      position: relative;
+      z-index: 3;
+      padding: 5px 10px;
+      margin-bottom: 0;
+      top: -15px;
+      font-family: 'Dosis', sans-serif;
+      font-size: 15px;
+      font-weight: normal;
+      text-align: center;
+      text-transform: uppercase;
+      color: white;
+      background: black;
+      transition: background 0.25s ease-in-out;
+    }
+    .ChannelFeedItemSubHeading:hover {
+      background: highlightColor;
+    }
+    .ChannelFeedItemHeading {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 30px;
+      letter-spacing: -1px;
+      transition: color 0.25s ease-in-out;
+    }
+    .ChannelFeedItemHeading:hover {
+      color: highlightColor;
+    }
+    .ChannelFeedItemAuthorDate {
+      display: none;
+    }
+    .ChannelFeedItemDetails {
+      display: none;
+    }
+  }
+
+  .ChannelFeedItem:nth-child(7n+7) {
+    margin-right: 0;
+  }
+}

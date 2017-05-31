@@ -1,0 +1,25 @@
+@value highlightColor from './colors.css';
+
+.RightRail {
+  position: fixed;
+  top: 120px;
+  right: 50%;
+  margin-right: -585px;
+  width: 300px;
+  z-index: 2;
+}
+.RightRailAd {
+  width: 300px;
+  height: 600px;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 600px;
+  color: white;
+  background: url('/static/GrayStripes.png');
+}
+.RightRightAd:not(:empty) {
+  background-color: white;
+}
+.RightRailAd iframe {
+  vertical-align: top !important;
+}

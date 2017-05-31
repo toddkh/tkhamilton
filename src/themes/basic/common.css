@@ -1,0 +1,214 @@
+@value linkColor from './colors.css';
+@value errorColor from './colors.css';
+
+.Container {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.Body {
+  position: relative;
+  z-index: 1;
+}
+.Main {
+  composes: Container;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.Heading {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: darkGrayColor;
+}
+.SubHeading {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: darkGrayColor;
+}
+
+@media (min-width: 768px) {
+  .Body {
+    margin: 0 auto;
+  }
+  .Heading {
+    font-size: 42px;
+  }
+  .SubHeading {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 1190px) {
+  .Container {
+    max-width: 1170px;
+  }
+  .Main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.LoadingIndicator {
+  position: relative;
+  height: 60px;
+  padding-top: 46px;
+  margin: 20px 0;
+  text-align: center;
+}
+.LoadingInner {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 0;
+  width: 0;
+  border: 0 solid linkColor;
+  border-radius: 50%;
+  transform: translate3d(0, 20px, 0);
+  animation: LoadingInner 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+@keyframes LoadingInner {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  30% {
+    height: 40px;
+    width: 40px;
+    border-width: 20px;
+    transform: translate3d(-20px, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    height: 40px;
+    width: 40px;
+    border-width: 0;
+    transform: translate3d(-20px, 0, 0);
+    opacity: 0;
+  }
+}
+.LoadingText {
+  font-size: 14px;
+  color: linkColor;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: LoadingText 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+@keyframes LoadingText {
+  0% {
+    opacity: 0.35;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.35;
+  }
+}
+
+.ErrorIndicator {
+  composes: LoadingIndicator;
+}
+.ErrorInner {
+  composes: LoadingInner;
+  border-color: errorColor;
+}
+.ErrorText {
+  color: errorColor;
+}
+
+.ResponsiveImageWrap {
+  display: block;
+  position: relative;
+  padding-bottom: 52.34%; /* fb aspect ratio */
+}
+.ResponsiveImage {
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.AdFixedWrapper {
+  display: block;
+  background-color: white;
+  bottom: 0;
+  left:0;
+  height: 50px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 100001;
+}
+.AdFixed {
+  height:50px;
+  margin: 0 auto;
+}
+
+.AdInArticle {
+  min-height: 90px;
+  padding: 15px 0;
+  margin: 0px 0 15px 0;
+  text-align: center;
+  background: url('/static/GrayStripes.png');
+  &:first-child {
+    min-height: 90px;
+  }
+}
+
+.AdTop {
+  composes: AdInArticle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 283px;
+  border-top: 2px solid black;
+  border-bottom: 1px solid black;
+  margin-bottom: 30px;
+}
+.AdBottom {
+  composes: AdInArticle;
+}
+
+@media (min-width: 768px) {
+  .AdInArticle {
+    min-height: 130px;
+
+    &:first-child {
+      min-height: 130px;
+    }
+  }
+}
+
+.SectionTitle {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.StaticContent {
+  margin: 100px 0;
+}
+.StaticContent div,
+.StaticContent p,
+.StaticContent h1,
+.StaticContent h2,
+.StaticContent h3,
+.StaticContent h4,
+.StaticContent li {
+  margin-bottom: 20px;
+}

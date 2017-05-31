@@ -1,0 +1,74 @@
+@value sponsorRecommendedByColor: #888888;
+@value sponsorContentContentBackgroundColor: #c7eaf6;
+@value sponsorAuthorImageBackgroundColor: #cccccc;
+@value sponsorAuthorDateColor: #888888;
+@value facebookLikeButtonBackgroundColor: #3c83f6;
+@value facebookLikeTextColor: #888888;
+
+.SponsorContent {
+  position: relative;
+  padding: 30px;
+}
+.SponsorRecommendedBy {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 10px;
+  color: sponsorRecommendedByColor;
+}
+.SponsorRecommendedByLink {
+  font-size: 16px;
+  color: black;
+}
+.SponsorContentContent {
+  height: 400px;
+  background-color: sponsorContentContentBackgroundColor;
+  margin-bottom: 16px;
+}
+.SponsorHeading {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.SponsorAuthor {
+  display: inline-block;
+  position: relative;
+  padding: 6px 6px 6px 50px;
+  min-height: 40px;
+  font-size: 12px;
+}
+.SponsorAuthorImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: sponsorAuthorImageBackgroundColor;
+}
+.SponsorAuthorName {
+  color: black;
+}
+.SponsorAuthorDate {
+  color: sponsorAuthorDateColor;
+}
+.FacebookLike {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  text-align: center;
+}
+.FacebookLikeButton {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  background: facebookLikeButtonBackgroundColor;
+  color: white;
+}
+.FacebookLikeText {
+  color: facebookLikeTextColor;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}

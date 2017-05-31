@@ -1,0 +1,8 @@
+@value lightishGrayColor: #bbbbbb;
+
+.CopyrightInfo {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: lightishGrayColor;
+  white-space: nowrap;
+}

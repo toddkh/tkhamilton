@@ -1,0 +1,350 @@
+@value linkColor from './colors.css';
+@value lightGrayColor from './colors.css';
+@value grayColor from './colors.css';
+@value darkGrayColor from './colors.css';
+@value globalBackgroundColor from './colors.css';
+@value highlightColor from './colors.css';
+@value facebookBlueColor from './colors.css';
+@value paragraphColor from './colors.css';
+@value embeddedBackgroundColor from './colors.css';
+
+.DocNormal {
+  position: relative;
+}
+.DocModeUnknown {
+  text-align: center;
+}
+.Article {
+  background: white;
+  margin-bottom: 20px;
+}
+.Article p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.ArticleContainer {
+  max-width: 100%;
+  margin: 0 auto;
+  border-bottom: 2px solid black;
+  padding-top: 0;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+.ArticleSubHeading {
+  display: none;
+}
+.ArticleHeading {
+  composes: Heading from './common.css';
+  margin-bottom: 8px;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.ArticleSocialIcons {
+  position: relative;
+  z-index: 3 !important;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.ArticleSocialIcon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 16px 8px;
+  padding: 10px;
+  border-radius: 50%;
+}
+.ArticleSocialIcon img {
+  width: 20px;
+  height: 20px;
+}
+.ArticleSocialIconFacebook {
+  composes: ArticleSocialIcon;
+  background: facebookBlueColor;
+}
+.ArticleSocialIconEmail {
+  composes: ArticleSocialIcon;
+  background: highlightColor;
+}
+.ArticleFeaturedImageWrap {
+  composes: ResponsiveImageWrap from './common.css';
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 15px;
+}
+.ArticleFeaturedImage {
+  composes: ResponsiveImage from './common.css';
+}
+.ArticleFeaturedImageAttribution {
+  composes: SubHeading from './common.css';
+  display: block;
+  position: relative;
+  top: -15px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 1px;
+  color: grayColor;
+  text-align: center;
+  border-bottom: 1px solid lightGrayColor;
+}
+.ArticleAuthorDate {
+  position: relative;
+  margin: 20px 0;
+  font-size: 13px;
+  font-family: 'Dosis', sans-serif;
+  text-transform: uppercase;
+  color: grayColor;
+  text-align: center;
+}
+.ArticleAuthorDate a,
+.ArticleAuthorDate span {
+  font-weight: 700;
+  color: darkGrayColor;
+}
+.ArticleAuthorAvatar {
+  display: none;
+}
+.ArticleAuthorAvatar img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.ArticleAuthorAvatar {
+  text-align: center;
+  line-height: 40px;
+}
+.ArticleDate {
+  margin-top: 4px;
+}
+.ArticleIntro {
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.ArticleIntro p > span {
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+.ArticleIntro a {
+  text-decoration: underline;
+  text-decoration-color: highlightColor;
+}
+.ArticleIntro a:hover {
+  background-color: highlightColor;
+  color: white;
+}
+.ArticleField {
+  margin-bottom: 20px;
+}
+.ArticleField:empty {
+  margin-bottom: 0;
+}
+.ArticleFieldText {
+  composes: ArticleField;
+  color: paragraphColor;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+}
+.ArticleFieldText a {
+  text-decoration: underline;
+  text-decoration-color: highlightColor;
+}
+.ArticleFieldText a:hover {
+  background-color: highlightColor;
+  color: white;
+}
+.ArticleFieldText p > span {
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+.ArticleFieldEmbed {
+  composes: ArticleField;
+}
+.ArticleFieldEmbedImageWrap {
+  composes: ResponsiveImageWrap from './common.css';
+  margin-bottom: 20px;
+}
+.ArticleFieldEmbedImage {
+  composes: ResponsiveImage from './common.css';
+  object-fit: cover;
+}
+.ArticleFieldEmbedHtmlWrap,
+.ArticleFieldEmbedVideoWrap {
+  margin-bottom: 20px;
+}
+.ArticleFieldEmbedHtml,
+.ArticleFieldEmbedVideo,
+.ArticleFieldEmbedVideo video {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+.ArticleFieldEmbedHtmlFull {
+  composes: ArticleFieldEmbedHtml;
+}
+.ArticleFieldEmbedHtmlFacebook {
+  composes: ArticleFieldEmbedHtml;
+  overflow-x: initial;
+}
+.ArticleFieldEmbedAttribution {
+  composes: SubHeading from './common.css';
+  display: block;
+  position: relative;
+  top: -15px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 1px;
+  color: grayColor;
+  text-align: center;
+  border-bottom: 1px solid lightGrayColor;
+}
+
+.ArticleFieldSlideshow {
+  composes: ArticleField;
+}
+.ArticleSponsorHeading {
+  composes: Heading from './common.css';
+  color: linkColor;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.ArticleSponsorContent {
+  margin-bottom: 20px;
+  background-color: globalBackgroundColor;
+}
+.ArticleEmbeddedVine {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto 20px;
+  background-color: embeddedBackgroundColor;
+}
+
+@media (min-width: 414px) {
+  .ArticleFieldEmbedHtmlFacebook {
+    width: 367px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ArticleHeading {
+    font-size: 38px;
+    line-height: 44px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .ArticleFeaturedImageWrap {
+    margin-bottom: 20px;
+  }
+  .ArticleAuthorDate {
+    font-size: 15px;
+  }
+  .ArticleSocialIcons {
+    float: right;
+    margin-right: 8px;
+  }
+  .ArticleSubHeading {
+    position: relative;
+    display: block;
+    font-family: 'Dosis', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      width: 70px;
+      height: 2px;
+      margin-left: -35px;
+      background: highlightColor;
+    }
+  }
+  .ArticleFieldText {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+@media (min-width: 1190px) {
+  .DocNormal {
+    padding-right: 330px;
+  }
+  .Article {
+    background: globalBackgroundColor;
+  }
+  .ArticleContainer {
+    position: relative;
+    padding-top: 30px;
+  }
+  .ArticleContainer:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 338px;
+    background: white;
+  }
+  .ArticleContainer > * {
+    position: relative;
+    z-index: 2;
+  }
+  .ArticleFeaturedImageWrap {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .ArticleFieldEmbedImageWrap {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .ArticleHeading {
+    font-size: 54px;
+    line-height: 60px;
+  }
+}
+
+/* Embed Targeting */
+.ArticleFieldEmbedHtmlWrapYoutube {
+    position: relative;
+    padding-top: 20px; height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+}
+.ArticleFieldEmbedHtmlYoutube iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* reddit :( */
+:global {
+ .embedly-card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,82 @@
+.Slideshow {
+  composes: Article from './Article.css';
+}
+.SlideshowContainer {
+  composes: ArticleContainer from './Article.css';
+}
+.SlideshowSubHeading {
+  composes: ArticleSubHeading from './Article.css';
+}
+.SlideshowHeading {
+  composes: ArticleHeading from './Article.css';
+}
+.SlideshowAuthorDate {
+  composes: ArticleAuthorDate from './Article.css';
+}
+.SlideshowSocialIcons {
+  composes: ArticleSocialIcons from './Article.css';
+}
+.SlideshowSocialIconFacebook {
+  composes: ArticleSocialIconFacebook from './Article.css';
+}
+.SlideshowSocialIconEmail {
+  composes: ArticleSocialIconEmail from './Article.css';
+}
+.SlideshowFeaturedImageWrap {
+  composes: ArticleFeaturedImageWrap from './Article.css';
+}
+.SlideshowFeaturedImage {
+  composes: ArticleFeaturedImage from './Article.css';
+}
+.SlideshowFeaturedImageAttribution {
+  composes: ArticleFeaturedImageAttribution from './Article.css';
+}
+.SlideshowAuthorDate {
+  composes: ArticleAuthorDate from './Article.css';
+}
+.SlideshowAuthorAvatar {
+  composes: ArticleAuthorAvatar from './Article.css';
+}
+.SlideshowDate {
+  composes: ArticleDate from './Article.css';
+}
+.SlideshowIntro {
+  composes: ArticleIntro from './Article.css';
+}
+.SlideshowSlides {
+  border: 0;
+  width: 100%;
+  height: 670px;
+}
+.SlideshowSlidesNoHeading {
+  border: 0;
+  width: 100%;
+  height: 450px;
+}
+.SlideshowEmbedded {
+  min-height: 100%;
+  padding-bottom: 20px;
+  color: white;
+  background: black;
+}
+.SlideshowSponsorHeading {
+  composes: ArticleSponsorHeading from './Article.css';
+}
+.SlideshowSponsorContent {
+  composes: ArticleSponsorContent from './Article.css';
+}
+.SlideshowEmbeddedVine {
+  composes: ArticleEmbeddedVine from './Article.css';
+}
+
+@media (min-width: 1053px) {
+  .SlideshowSlides {
+    border: 0;
+    width: 100%;
+    height: 530px;
+  }
+  .SlideshowSlidesNoHeading {
+    composes: SlideshowSlides;
+    height: 530px;
+  }
+}

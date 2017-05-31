@@ -1,0 +1,428 @@
+@value headerColor: #000000;
+@value headerBackgroundColor: #ffffff;
+@value highlightColor from './colors.css';
+@value gradientColor from './colors.css';
+@value linkColor from './colors.css';
+@value lightGrayColor from './colors.css';
+@value lightishGrayColor from './colors.css';
+
+.Header {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 69px;
+  color: headerColor;
+  background-color: headerBackgroundColor;
+}
+.HeaderChannel {
+  composes: Header;
+}
+.HeaderArticle {
+  composes: Header;
+}
+.Header:after {
+  content: '';
+  position: absolute;
+  z-index: 101;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: .788px;
+  background: gradientColor;
+}
+.HeaderScrolledUp {
+  composes: Header;
+  position: fixed;
+}
+.HeaderChannelScrolledUp {
+  composes: HeaderChannel;
+  position: fixed;
+}
+.HeaderArticleScrolledUp {
+  composes: HeaderArticle;
+  position: fixed;
+}
+.HeaderContainer {
+  composes: Container from './common.css';
+  position: relative;
+  height: 69px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: inherit;
+}
+.HeaderLogo {
+  position: absolute;
+  z-index: 11;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 69px;
+  padding: 25px 0 24px;
+}
+.HeaderLogoDoc {
+  composes: HeaderLogo;
+  left: 60px;
+  width: auto;
+}
+
+.HeaderNavigation {
+  position: relative;
+  top: 69px;
+  background-color: headerBackgroundColor;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 700;
+}
+.HeaderNavigationContainer {
+  position: relative;
+  z-index: 102;
+  border-bottom: .788px solid transparent;
+}
+.HeaderNavigationToggle {
+  display: none;
+}
+.HeaderNavigationIcon {
+  position: absolute;
+  z-index: 13;
+  top: -69px;
+  left: -15px;
+  width: 60px;
+  height: 69px;
+  padding: 18px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.HeaderNavigationIconOpen {
+  width: 40px;
+  height: 34px;
+}
+.HeaderNavigationIconClose {
+  display: none;
+  width: 40px;
+  height: 34px;
+}
+.HeaderNavigationLink {
+  composes: Link from './root.css';
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 20px;
+  line-height: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 1px solid lightishGrayColor;
+}
+.HeaderNavigationLinkSelected {
+  composes: HeaderNavigationLink;
+}
+.HeaderNavigationLink:hover,
+.HeaderNavigationLink:active,
+.HeaderNavigationLinkSelected {
+  color: highlightColor;
+}
+
+.HeaderNavigationChannels {
+  display: none;
+  background-color: white;
+  text-align: center;
+}
+.HeaderNavigationInfo {
+  display: none;
+  background-color: white;
+  text-align: center;
+}
+.HeaderNavigationSocialIcons {
+  display: none;
+  height: 70px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: lightGrayColor;
+  text-align: center;
+}
+.HeaderNavigationCopyrightInfo {
+  display: none;
+  background-color: lightGrayColor;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: -10px;
+  text-align: center;
+}
+.HeaderNavigationInfo .HeaderNavigationLink {
+  width: 50%;
+  font-size: 10px;
+  line-height: 10px;
+}
+.HeaderNavigationInfo .HeaderNavigationLink:nth-child(even) {
+  border-left: 1px solid lightishGrayColor;
+}
+
+.HeaderNavigationToggle:checked {
+  ~ .HeaderNavigationIcon .HeaderNavigationIconOpen {
+    display: none;
+  }
+  ~ .HeaderNavigationIcon .HeaderNavigationIconClose {
+    display: inline-block;
+  }
+  ~ .HeaderNavigationContainer {
+    margin-bottom: 69px;
+    margin-left: -15px;
+    margin-right: -15px;
+    border-bottom: .788px solid highlightColor;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 14px 14px 14px;
+      border-color: transparent transparent white transparent;
+    }
+
+    .HeaderNavigationChannels {
+      display: block;
+    }
+    .HeaderNavigationInfo {
+      display: block;
+    }
+    .HeaderNavigationSocialIcons {
+      display: block;
+    }
+    .HeaderNavigationCopyrightInfo {
+      display: block;
+    }
+  }
+}
+
+.HeaderButton {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 105px;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 19px;
+  padding-top: 10px;
+  padding-bottom: 9px;
+  padding-left: 40px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: white;
+  background-color: highlightColor;
+  cursor: pointer;
+}
+.HeaderButton:hover {
+  color: white;
+}
+.HeaderButtonImg {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+}
+.ButtonRandomArticle {
+  composes: HeaderButton;
+  width: 150px;
+  background-color: #ffbb31;
+}
+.ButtonRandomArticle:after {
+  content: 'Next Article';
+}
+.ButtonRandomArticleImg {
+  composes: HeaderButtonImg;
+}
+.ButtonShareFacebook {
+  composes: HeaderButton;
+  padding-left: 25px;
+  background-color: #617aa3;
+}
+.ButtonShareFacebook:after {
+  content: 'Share';
+}
+.ButtonShareFacebookImg {
+  composes: HeaderButtonImg;
+  left: 5px;
+}
+
+@media (min-width: 414px) {
+  .HeaderLogo {
+    padding: 22px 0 22px;
+  }
+}
+
+@media (min-width: 768px) {
+  .Header {
+    position: fixed;
+    height: 89px;
+  }
+  .HeaderContainer {
+    height: 89px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .HeaderLogo {
+    left: 70px;
+    width: auto;
+    height: 89px;
+    padding: 30px 0 29px;
+  }
+  .HeaderNavigation {
+    position: relative;
+    top: 89px;
+  }
+  .HeaderNavigationIcon {
+    z-index: 13;
+    top: -89px;
+    left: 0;
+    width: 70px;
+    height: 89px;
+    padding: 28px 15px;
+  }
+  .HeaderNavigationContainer {
+    display: block;
+    margin-bottom: 0 !important;
+  }
+
+  .HeaderChannel {
+    .HeaderNavigationToggle ~ .HeaderNavigationContainer {
+      .HeaderNavigationChannels {
+        display: block !important;
+        position: absolute;
+        top: -89px;
+        left: 290px;
+        right: 0;
+        height: 89px;
+        background-color: transparent;
+        overflow: hidden;
+
+        .HeaderNavigationLink {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    .HeaderNavigationToggle:checked ~ .HeaderNavigationContainer {
+      margin-bottom: 89px;
+    }
+  }
+
+  .HeaderNavigationLink {
+    width: auto;
+    height: 100%;
+    padding: 38px 10px;
+    line-height: 13px;
+    font-size: 13px;
+  }
+  .HeaderNavigationInfo .HeaderNavigationLink {
+    width: auto;
+    border: 0;
+    padding: 20px;
+  }
+  .HeaderNavigationInfo .HeaderNavigationLink:nth-child(even) {
+    border: 0;
+  }
+
+  .HeaderButton {
+    right: 15px;
+    font-size: 16px;
+    height: 35px;
+    margin-top: 27px;
+    margin-bottom: 27px;
+    padding-left: 45px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .HeaderButtonImg {
+    width: 25px;
+    height: 25px;
+  }
+  .ButtonShareFacebook {
+    width: 90px;
+    right: 315px;
+    padding-left: 35px;
+  }
+}
+
+@media (min-width: 980px) {
+  .HeaderChannel {
+    .HeaderNavigationToggle ~ .HeaderNavigationContainer {
+      .HeaderNavigationChannels {
+        right: 200px;
+      }
+    }
+  }
+
+  .HeaderNavigationSocialIcons {
+    display: block;
+    position: absolute;
+    top: -89px;
+    right: 0;
+    height: 89px;
+    background-color: transparent;
+  }
+
+  .HeaderNavigationToggle:checked ~ .HeaderNavigationContainer {
+    .HeaderNavigationSocialIcons {
+      right: 15px;
+    }
+  }
+}
+
+@media (min-width: 1190px) {
+  .HeaderLogo {
+    left: 55px;
+  }
+  .HeaderNavigationIcon {
+    left: -15px;
+  }
+  .HeaderNavigationLink {
+    padding: 37px 15px;
+    line-height: 15px;
+    font-size: 15px;
+  }
+
+  .Header {
+    .HeaderNavigationToggle ~ .HeaderNavigationContainer {
+      .HeaderNavigationChannels {
+        display: block !important;
+        position: absolute;
+        top: -89px;
+        left: 365px;
+        right: 270px;
+        height: 89px;
+        background-color: transparent;
+        overflow: hidden;
+
+        .HeaderNavigationLink {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    .HeaderNavigationToggle:checked ~ .HeaderNavigationContainer {
+      margin-bottom: 89px;
+    }
+
+    .ButtonRandomArticle {
+      right: 0;
+    }
+    .ButtonShareFacebook {
+      right: 160px;
+    }
+  }
+
+  .HeaderNavigationToggle:checked ~ .HeaderNavigationContainer {
+    .HeaderNavigationSocialIcons {
+      right: 15px;
+    }
+  }
+}

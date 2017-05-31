@@ -1,0 +1,91 @@
+@value linkColor from './colors.css';
+
+.Listacle {
+  composes: Article from './Article.css';
+}
+.ListacleContainer {
+  composes: ArticleContainer from './Article.css';
+}
+.ListacleSubHeading {
+  composes: ArticleSubHeading from './Article.css';
+}
+.ListacleHeading {
+  composes: ArticleHeading from './Article.css';
+}
+.ListacleSocialIcons {
+  composes: ArticleSocialIcons from './Article.css';
+}
+.ListacleSocialIconFacebook {
+  composes: ArticleSocialIconFacebook from './Article.css';
+}
+.ListacleSocialIconEmail {
+  composes: ArticleSocialIconEmail from './Article.css';
+}
+.ListacleFeaturedImageWrap {
+  composes: ArticleFeaturedImageWrap from './Article.css';
+}
+.ListacleFeaturedImage {
+  composes: ArticleFeaturedImage from './Article.css';
+}
+.ListacleFeaturedImageAttribution {
+  composes: ArticleFeaturedImageAttribution from './Article.css';
+}
+.ListacleAuthorDate {
+  composes: ArticleAuthorDate from './Article.css';
+}
+.ListacleAuthorAvatar {
+  composes: ArticleAuthorAvatar from './Article.css';
+}
+.ListacleDate {
+  composes: ArticleDate from './Article.css';
+}
+.ListacleIntro {
+  composes: ArticleIntro from './Article.css';
+}
+.ListacleItem {
+  composes: ArticleField from './Article.css';
+  position: relative;
+}
+.ListacleItemNumber {
+  composes: Heading from './common.css';
+  display: inline-block;
+  color: linkColor;
+  font-size: 32px;
+  font-weight: bold;
+  margin-right: 12px;
+}
+.ListacleItemNumber:after {
+  content: '. ';
+}
+.ListacleItemHeading {
+  composes: Heading from './common.css';
+  display: inline-block;
+  font-size: 32px;
+  font-weight: bold;
+  min-height: 38px;
+  margin-bottom: 16px;
+}
+.ListacleItemHeading:first-child {
+  padding-left: 0;
+}
+.ListacleItemHeading:empty {
+  display: none;
+}
+.ListacleItemCopy {
+  composes: ArticleFieldText from './Article.css';
+}
+.ListacleSponsorHeading {
+  composes: ArticleSponsorHeading from './Article.css';
+}
+.ListacleSponsorContent {
+  composes: ArticleSponsorContent from './Article.css';
+}
+.ListacleEmbeddedVine {
+  composes: ArticleEmbeddedVine from './Article.css';
+}
+
+@media (min-width: 768px) {
+  .ListacleItemHeading {
+    padding-top: 9px;
+  }
+}

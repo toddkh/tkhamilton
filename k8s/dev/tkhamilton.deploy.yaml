@@ -1,0 +1,64 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: tkhamilton
+    build-sha1: "_GIT_SHA_"
+    build-number: "_BUILD_NUMBER_"
+    image-tag: "_IMAGE_TAG_"
+  name: tkhamilton
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: tkhamilton
+  template:
+    metadata:
+      labels:
+        app: tkhamilton
+        build-sha1: "_GIT_SHA_"
+        build-number: "_BUILD_NUMBER_"
+        image-tag: "_IMAGE_TAG_"
+    spec:
+      containers:
+      - env:
+        - name: API_HOST
+          value: "http://paradigm-api.paradigm-staging"
+        - name: SENTRY_ENV
+          value: "development"
+        image: gcr.io/f12-tech/tkhamilton:latest
+        imagePullPolicy: Always
+        name: tkhamilton
+        ports:
+        - containerPort: 3001
+          name: tkhamilton
+          protocol: TCP
+        livenessProbe:
+            httpGet:
+              path: /
+              port: 3001
+              httpHeaders:
+              - name: X-Request-Id
+                value: health-check
+            initialDelaySeconds: 120
+            timeoutSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3001
+            httpHeaders:
+            - name: X-Request-Id
+              value: health-check
+          initialDelaySeconds: 5
+          timeoutSeconds: 20
+        resources:
+          limits:
+            cpu: 100m
+            memory: 400Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi

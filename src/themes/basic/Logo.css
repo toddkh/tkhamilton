@@ -1,0 +1,32 @@
+.LogoWrap {
+  position: relative;
+  width: 180px;
+  height: 20px;
+  margin: 0px auto;
+}
+.LogoWrapDoc {
+  composes: LogoWrap;
+  display: inline-block;
+  margin: 0px;
+}
+.Logo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 414px) {
+  .LogoWrap {
+    width: 225px;
+    height: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .LogoWrap {
+    display: inline-block;
+    width: 270px;
+    height: 30px;
+    margin: 0px;
+  }
+}

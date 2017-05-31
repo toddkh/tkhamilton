@@ -1,0 +1,73 @@
+.SocialIcons {
+  height: 100%;
+}
+.SocialIcon {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+}
+.SocialIconImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  width: 16px;
+  height: 16px;
+  transition: opacity 0.25s ease-in-out;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.SocialIconImgHover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.SocialIcon:hover .SocialIconImg {
+  opacity: 0;
+}
+.SocialIcon:hover .SocialIconImgHover {
+  opacity: 1;
+}
+.SocialIconTwitter {
+  composes: SocialIcon;
+}
+.SocialIconFacebook {
+  composes: SocialIcon;
+}
+.SocialIconInstagram {
+  composes: SocialIcon;
+}
+.SocialIconEmail {
+  composes: SocialIcon;
+}
+
+@media (min-width: 768px) {
+  .SocialIcon {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media (min-width: 980px) {
+  .SocialIcon {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
