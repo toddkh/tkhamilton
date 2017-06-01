@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Doc } from 'paradigm-site-components';
 import getReadableDate from '../../../utilities/getReadableDate';
-import getAds from '../../../utilities/getAds';
 
 const DocNormal = ({ classes, screenWidth, docId, channelSlug }) => (
   <div className={classes.DocNormal}>
@@ -13,10 +12,6 @@ const DocNormal = ({ classes, screenWidth, docId, channelSlug }) => (
       embedWidth={840}
       embedHeight={440}
       paginateEvery={9}
-      ads={getAds(screenWidth)}
-      adOffset={3}
-      adEvery={4}
-      minItemsBeforeBottomAd={2}
     />
   </div>
 );
