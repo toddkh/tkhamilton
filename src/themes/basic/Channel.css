@@ -13,7 +13,7 @@
 .ChannelFeedHeading {
   display: block;
   height: 30px;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
@@ -47,7 +47,7 @@
   z-index: 3;
   padding: 5px 10px;
   top: -15px;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 15px;
   font-weight: normal;
   text-transform: uppercase;
@@ -60,7 +60,7 @@
 .ChannelFeedItemHeading {
   margin-top: 0;
   margin-bottom: 10px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
@@ -72,7 +72,7 @@
   color: highlightColor;
 }
 .ChannelFeedItemDetails {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 18px;
   line-height: 23px;
   margin-bottom: 30px;
@@ -187,7 +187,7 @@
   .ChannelFeedItemHeading {
     margin-top: -6px;
     margin-bottom: 10px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Merriweather', serif;
     font-size: 40px;
     font-weight: bold;
     text-align: left;
@@ -206,7 +206,7 @@
     left: 0;
     width: 570px;
     font-size: 13px;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Merriweather', serif;
     text-transform: uppercase;
     color: grayColor;
     text-align: left;
@@ -252,7 +252,7 @@
       padding: 5px 10px;
       margin-bottom: 0;
       top: -15px;
-      font-family: 'Dosis', sans-serif;
+      font-family: 'Merriweather', serif;
       font-size: 15px;
       font-weight: normal;
       text-align: center;
@@ -267,7 +267,7 @@
     .ChannelFeedItemHeading {
       margin-top: 0;
       margin-bottom: 10px;
-      font-family: 'Oswald', sans-serif;
+      font-family: 'Merriweather', serif;
       font-size: 24px;
       font-weight: bold;
       text-align: center;

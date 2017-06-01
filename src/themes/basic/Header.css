@@ -5,6 +5,7 @@
 @value linkColor from './colors.css';
 @value lightGrayColor from './colors.css';
 @value lightishGrayColor from './colors.css';
+@value darkGrayColor from './colors.css';
 
 .Header {
   position: absolute;
@@ -29,8 +30,8 @@
   top: 100%;
   left: 0;
   right: 0;
-  height: .788px;
-  background: gradientColor;
+  height: 1.788px;
+  background: darkGrayColor;
 }
 .HeaderScrolledUp {
   composes: Header;
@@ -56,9 +57,8 @@
   position: absolute;
   z-index: 11;
   top: 0;
-  left: 0px;
-  width: 100%;
-  height: 69px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 25px 0 24px;
 }
 .HeaderLogoDoc {
@@ -71,7 +71,7 @@
   position: relative;
   top: 69px;
   background-color: headerBackgroundColor;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Merriweather', serif;
   font-weight: 700;
 }
 .HeaderNavigationContainer {
@@ -143,7 +143,7 @@
 }
 .HeaderNavigationCopyrightInfo {
   display: none;
-  background-color: lightGrayColor;
+  background-color: #000;
   padding-top: 15px;
   padding-bottom: 15px;
   margin-top: -10px;
@@ -151,8 +151,8 @@
 }
 .HeaderNavigationInfo .HeaderNavigationLink {
   width: 50%;
-  font-size: 10px;
-  line-height: 10px;
+  font-size: 14px;
+  line-height: 14px;
 }
 .HeaderNavigationInfo .HeaderNavigationLink:nth-child(even) {
   border-left: 1px solid lightishGrayColor;
@@ -169,7 +169,7 @@
     margin-bottom: 69px;
     margin-left: -15px;
     margin-right: -15px;
-    border-bottom: .788px solid highlightColor;
+    border-bottom: .788px solid #fff;
 
     &:before {
       content: '';
@@ -209,7 +209,7 @@
   padding-top: 10px;
   padding-bottom: 9px;
   padding-left: 40px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 11px;
   font-weight: normal;
   line-height: 11px;
@@ -270,10 +270,8 @@
     padding-right: 0;
   }
   .HeaderLogo {
-    left: 70px;
-    width: auto;
-    height: 89px;
-    padding: 30px 0 29px;
+    left: 50%;
+    transform: translateX(-50%)
   }
   .HeaderNavigation {
     position: relative;
@@ -333,12 +331,11 @@
 
   .HeaderButton {
     right: 15px;
-    font-size: 16px;
+    font-size: 12px;
     height: 35px;
     margin-top: 27px;
     margin-bottom: 27px;
     padding-left: 45px;
-    font-size: 16px;
     line-height: 16px;
   }
   .HeaderButtonImg {
@@ -379,7 +376,8 @@
 
 @media (min-width: 1190px) {
   .HeaderLogo {
-    left: 55px;
+    left: 50%;
+    transform: translateX(-50%)
   }
   .HeaderNavigationIcon {
     left: -15px;
@@ -387,7 +385,7 @@
   .HeaderNavigationLink {
     padding: 37px 15px;
     line-height: 15px;
-    font-size: 15px;
+    font-size: 22px;
   }
 
   .Header {

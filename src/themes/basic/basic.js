@@ -7,6 +7,7 @@ import CopyrightInfo from './CopyrightInfo.css';
 import Header from './Header.css';
 import Listacle from './Listacle.css';
 import Logo from './Logo.css';
+import New from './New.css';
 import RightRail from './RightRail.css';
 import Slides from './Slides.css';
 import Slideshow from './Slideshow.css';
@@ -24,6 +25,7 @@ export default {
     ...Header,
     ...Listacle,
     ...Logo,
+    ...New,
     ...RightRail,
     ...Slides,
     ...Slideshow,
@@ -50,6 +52,7 @@ if (process.env.NODE_ENV !== 'production') {
       './Header.css',
       './Listacle.css',
       './Logo.css',
+      './New.css',
       './RightRail.css',
       './Slides.css',
       './Slideshow.css',
@@ -68,6 +71,7 @@ if (process.env.NODE_ENV !== 'production') {
           ...require('./Header.css'),
           ...require('./Listacle.css'),
           ...require('./Logo.css'),
+          ...require('./New.css'),
           ...require('./RightRail.css'),
           ...require('./Slides.css'),
           ...require('./Slideshow.css'),

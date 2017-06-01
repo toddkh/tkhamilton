@@ -94,7 +94,7 @@ function renderDocumentToString(html, states, clientStates) {
     + `<link href="${staticOrigin}/static/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />`
     + `<link href="${staticOrigin}/static/android-icon-192x192.png" rel="icon" sizes="192x192" />`
     + `<link href="${staticOrigin}/static/android-icon-128x128.png" rel="icon" sizes="128x128" />`
-    + `<link href="https://fonts.googleapis.com/css?family=Dosis|Oswald" rel="stylesheet"/>`
+    + `<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">`
     + cssFiles.map(cssFile => (
       `<link rel="stylesheet" type="text/css" href="${cssFile}"/>`
     )).join('')

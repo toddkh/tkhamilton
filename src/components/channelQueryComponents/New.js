@@ -7,11 +7,12 @@ import {
 } from 'paradigm-site-components/lib/utilities/html';
 import isServerSide from 'paradigm-site-components/lib/utilities/isServerSide';
 import getEmbedUrl from 'paradigm-site-components/lib/utilities/getEmbedUrl';
+import getReadableDate from '../../utilities/getReadableDate';
 
-const Trending = ({ classes, channelQueryResult, screenWidth }) => (
+const New = ({ classes, channelQueryResult, screenWidth }) => (
   channelQueryResult ? (
-    <div className={classes.Trending}>
-      <div className={classes.TrendingItems}>
+    <div className={classes.New}>
+      <div className={classes.NewItems}>
         {channelQueryResult.map((docState, index) => {
           let imageWidth = screenWidth;
 
@@ -29,33 +30,15 @@ const Trending = ({ classes, channelQueryResult, screenWidth }) => (
 
           return (
             <div
-              key={`TrendingItem:${docState.docId}`}
-              className={classes.TrendingItem}
+              key={`NewItem:${docState.docId}`}
+              className={classes.NewItem}
             >
-
               <Link
-                className={classes.TrendingTitle}
-                to={docState.docPermalink}
-              >
-                {docState.docTitle}
-              </Link>
-
-              <div
-                className={classes.TrendingDetails}
-                dangerouslySetInnerHTML={{
-                  __html: getValidHtml(
-                    docState.docExcerpt || docState.docIntro,
-                    removeLinks
-                  )
-                }}
-              />
-
-              <Link
-                className={classes.TrendingImageWrap}
+                className={classes.NewImageWrap}
                 to={docState.docPermalink}
               >
                 <img
-                  className={classes.TrendingImage}
+                  className={classes.NewImage}
                   src={getEmbedUrl(
                     docState.docFeaturedImage,
                     imageWidth,
@@ -65,17 +48,38 @@ const Trending = ({ classes, channelQueryResult, screenWidth }) => (
               </Link>
 
               <Link
-                className={classes.TrendingButton}
-                to={`/basic`}
+                className={classes.NewTitle}
+                to={docState.docPermalink}
               >
-              {'The Good Stuff'}
+                {docState.docTitle}
               </Link>
 
               <div
-                className={classes.TrendingBottomSeperator}
-                />
-              
+                className={classes.NewDetails}
+                dangerouslySetInnerHTML={{
+                  __html: getValidHtml(
+                    docState.docExcerpt || docState.docIntro,
+                    removeLinks
+                  )
+                }}
+              />
+            <div className={classes.NewItemAuthorDate}>
+              <ArticleAuthor
+                className={classes.NewItemAuthor}
+                userId={docState.docUserId}
+                userFirstName={
+                  docState.docUser && docState.docUser.firstName
+                }
+                userLastName={
+                  docState.docUser && docState.docUser.lastName
+                }
+              />
+
+              <div className={classes.NewItemDate}>
+                {getReadableDate(docState.docPublishedAt)}
+              </div>
             </div>
+          </div>
           );
         })}
       </div>
@@ -84,10 +88,10 @@ const Trending = ({ classes, channelQueryResult, screenWidth }) => (
   ) : null
 );
 
-Trending.propTypes = {
+New.propTypes = {
   classes: PropTypes.object.isRequired,
   screenWidth: PropTypes.number.isRequired,
   channelQueryResult: PropTypes.array
 };
 
-export default Trending;
+export default New;

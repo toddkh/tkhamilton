@@ -19,7 +19,7 @@
 
 .Heading {
   display: block;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 24px;
   font-weight: bold;
   color: darkGrayColor;
@@ -195,7 +195,7 @@
   height: 30px;
   line-height: 30px;
   text-align: center;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 15px;

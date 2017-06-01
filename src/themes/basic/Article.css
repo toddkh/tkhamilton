@@ -84,7 +84,7 @@
   padding-top: 5px;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 10px;
   line-height: 10px;
   letter-spacing: 1px;
@@ -96,7 +96,7 @@
   position: relative;
   margin: 20px 0;
   font-size: 13px;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Merriweather', serif;
   text-transform: uppercase;
   color: grayColor;
   text-align: center;
@@ -121,7 +121,7 @@
   margin-top: 4px;
 }
 .ArticleIntro {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 18px;
   line-height: 26px;
   margin-bottom: 20px;
@@ -149,7 +149,7 @@
 .ArticleFieldText {
   composes: ArticleField;
   color: paragraphColor;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 18px;
   line-height: 26px;
 }
@@ -207,7 +207,7 @@
   padding-top: 5px;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 10px;
   line-height: 10px;
   letter-spacing: 1px;
@@ -262,7 +262,7 @@
   .ArticleSubHeading {
     position: relative;
     display: block;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Merriweather', serif;
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
@@ -290,7 +290,7 @@
 
 @media (min-width: 1190px) {
   .DocNormal {
-    padding-right: 330px;
+    padding: 0px 150px;
   }
   .Article {
     background: globalBackgroundColor;
@@ -322,8 +322,8 @@
     margin-right: 0;
   }
   .ArticleHeading {
-    font-size: 54px;
-    line-height: 60px;
+    font-size: 42px;
+    line-height: 54px;
   }
 }
 
